@@ -1,13 +1,14 @@
 from src.drinks_api_client import *
 
 def test_find_receipts():
-    receipts = find_receipts()
+    rest_name = 'HONDURAS MAYA CAFE & BAR LLC'
+    receipts = find_receipts(rest_name)
     assert type(receipts) == list
     assert type(receipts[0]) == dict
 
 def test_cleaned_name():
     rest_name = 'HONDURAS MAYA CAFE & BAR LLC'
-    assert cleaned_name(rest_name) == 'honduras_maya_cafe_&_bar_llc.json'
+    assert cleaned_name(rest_name) == 'honduras_maya_cafe_&_bar_llc'
 
 def test_write_to_json():
     data = [{'hello': 'world'}]
@@ -22,7 +23,7 @@ def test_write_to_json():
 
 def test_read_from_file():
     data = [{'hello': 'world'}]
-    file_name = 'honduras_maya'
+    rest_name = 'honduras_maya'
     with open(f'./data/{rest_name}.json', 'w') as f:
         f.write(json.dumps(data))
     rest_name = 'HONDURAS MAYA'

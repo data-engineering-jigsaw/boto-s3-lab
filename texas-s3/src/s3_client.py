@@ -1,4 +1,4 @@
-from drinks_api_client import *
+from src.drinks_api_client import *
 import boto3
 s3 = boto3.client('s3')
 

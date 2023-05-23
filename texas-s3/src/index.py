@@ -1,5 +1,5 @@
-from s3_client import *
-from drinks_api_client import *
+from src.s3_client import *
+from src.drinks_api_client import *
 import boto3
 import os
 
